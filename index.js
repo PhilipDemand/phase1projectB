@@ -74,8 +74,13 @@ selectButton.addEventListener("click", function() {
   })
 })
   .then(response => response.json())
-  .then( () => renderToolCards())
-  .then( () => fillDropDown())
+  .then(updatedTool => {
+    //console.log(updatedTool)
+    tools[updatedTool.id - 1].availability = updatedTool.availability
+    renderToolCards()
+    fillDropDown()
+  })
+  
   .catch(error => console.error(error))
    
   }
