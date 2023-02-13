@@ -6,9 +6,9 @@ function fetchTools() {
     .then( (someData) => {
       const arrayOfToolObjects = someData
       tools.push(...arrayOfToolObjects)
+      renderToolCards()
+      fillDropDown()
     })
-    .then( () => renderToolCards())
-    .then( () => fillDropDown())
 }
 
 fetchTools()
@@ -75,7 +75,6 @@ selectButton.addEventListener("click", function() {
 })
   .then(response => response.json())
   .then(updatedTool => {
-    //console.log(updatedTool)
     tools[updatedTool.id - 1].availability = updatedTool.availability
     renderToolCards()
     fillDropDown()
