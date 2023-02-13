@@ -28,7 +28,7 @@ function renderToolCards() {
             imageForToolCard.className = "tool-avatar"
            const pTagForToolCard = document.createElement("p")
              pTagForToolCard.textContent = `${eachToolObject.availability}`
-             const pTagForDescription = document.createElement("p")
+           const pTagForDescription = document.createElement("p")
              pTagForDescription.textContent = eachToolObject.useDescription
              pTagForDescription.style.display = "none"
           divForToolCard.addEventListener("mouseover", function() {
@@ -38,22 +38,23 @@ function renderToolCards() {
             pTagForDescription.style.display = "none"
           })
           divForToolCard.append(h2ForToolCard , imageForToolCard , pTagForToolCard, pTagForDescription)
-    
           toolCollectionDiv.append(divForToolCard)
       })
 }
 
 const selectDropDown = document.getElementById("selectToolMenu");
 function fillDropDown(){
+    //try tools.map with an if
     const justAvailableNames = tools.filter(status => status.availability === "Available");
-    //console.log(justAvailableNames)
     selectDropDown.innerHTML = "";
-    for (var i = 0; i < justAvailableNames.length; i++) {
-      let option = document.createElement("option");
-      option.text = justAvailableNames[i].name;
-      option.value = justAvailableNames[i].name;
-      selectDropDown.add(option);
-    }
+    justAvailableNames.map(
+      (eachNameObject)=>{
+        let option = document.createElement("option");
+        option.text = eachNameObject.name;
+        option.value = eachNameObject.name;
+        selectDropDown.add(option);
+      }
+    )
 }
 
 const selectButton = document.getElementById("reserveToolButton");

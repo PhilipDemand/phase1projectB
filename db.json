@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Framing Hammer",
       "image": "https://m.media-amazon.com/images/I/619Yfec0mpL._AC_SL1500_.jpg",
-      "availability": "Reserved",
+      "availability": "Available",
       "phonenumber": "860-555-1111",
       "useDescription": "For heavy wood construction and concrete framework"
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "name": "Air Compressor",
       "image": "https://m.media-amazon.com/images/I/71h8CZ1l2ZL.jpg",
-      "availability": "Reserved",
+      "availability": "Available",
       "phonenumber": "860-555-6666",
       "useDescription": "Powers air-tools like impact wrenches, nail guns, air-chisels, etc."
     }
