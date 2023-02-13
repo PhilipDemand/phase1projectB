@@ -79,9 +79,32 @@ selectButton.addEventListener("click", function() {
     renderToolCards()
     fillDropDown()
   })
-  
   .catch(error => console.error(error))
-   
   }
-  
   );
+
+  const submitForm = document.getElementById("submitToolForm");
+  submitForm.addEventListener("submit", function(e) { 
+    const submittedObject = {
+        name:e.target[0].value, 
+        image:e.target[1].value,
+        availability:"Available",
+        phonenumber:e.target[2].value,
+        useDescription:e.target[3].value
+      }
+      fetch("http://localhost:3000/tools", {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json", 
+        Accept: "application/json"
+      },
+      body: JSON.stringify(submittedObject)
+    })
+    .then(response => response.json())
+    .then(newUpdatedTool => {
+        console.log(newUpdatedTool)
+        renderToolCards()
+        fillDropDown()
+      })
+  }
+  )

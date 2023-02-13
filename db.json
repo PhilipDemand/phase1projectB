@@ -44,9 +44,17 @@
       "id": 6,
       "name": "Air Compressor",
       "image": "https://m.media-amazon.com/images/I/71h8CZ1l2ZL.jpg",
-      "availability": "Available",
+      "availability": "Reserved",
       "phonenumber": "860-555-6666",
       "useDescription": "Powers air-tools like impact wrenches, nail guns, air-chisels, etc."
+    },
+    {
+      "name": "Backpack Blower",
+      "image": "https://www.amleo.com/media/catalog/product/cache/aa1841770a2aa8b05bb5b429e42f9ba2/e/b/eb02.jpg",
+      "availability": "Available",
+      "phonenumber": "860-555-9999",
+      "useDescription": "For blowing leaves and yard debris",
+      "id": 7
     }
   ]
 }
