@@ -43,21 +43,21 @@ function renderToolCards() {
       })
 }
 
+const selectDropDown = document.getElementById("selectToolMenu");
 function fillDropDown(){
-    const selectDropDown = document.getElementById("selectToolMenu");
     const justAvailableNames = tools.filter(status => status.availability === "Available");
+    //console.log(justAvailableNames)
     selectDropDown.innerHTML = "";
-    for (var j = 0; j < justAvailableNames.length; j++) {
+    for (var i = 0; i < justAvailableNames.length; i++) {
       let option = document.createElement("option");
-      option.text = justAvailableNames[j].name;
-      option.value = justAvailableNames[j].name;
+      option.text = justAvailableNames[i].name;
+      option.value = justAvailableNames[i].name;
       selectDropDown.add(option);
     }
 }
 
 const selectButton = document.getElementById("reserveToolButton");
 selectButton.addEventListener("click", function() {
-    const selectDropDown = document.getElementById("selectToolMenu");
     const item = selectDropDown.value
     const resultObject = tools.find(obj => {
         return Object.values(obj).some(name => name === item);
@@ -101,8 +101,7 @@ selectButton.addEventListener("click", function() {
       body: JSON.stringify(submittedObject)
     })
     .then(response => response.json())
-    .then(newUpdatedTool => {
-        console.log(newUpdatedTool)
+    .then(response => {
         renderToolCards()
         fillDropDown()
       })
