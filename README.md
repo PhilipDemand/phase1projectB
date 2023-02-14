@@ -25,4 +25,3 @@ Instead of a tool library that would require a physical space to store available
     Type the name of your tool in the first field of the form, an image URL in the next, your phone number in the next, and a brief description of the tool's use in the last.
     Upon clicking the "Submit Tool" button, your tool will now appear in its own rendered card with the status "Available."
     The name of the submitted tool will be added to the dropdown menu.
-    No new card will be rendered if the submit button is clicked while the form fields are empty.

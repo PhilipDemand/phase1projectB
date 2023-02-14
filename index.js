@@ -16,7 +16,6 @@ fetchTools()
 function renderToolCards() {
     const toolCollectionDiv = document.querySelector("#tool-collection")
     toolCollectionDiv.innerHTML = ""
-
     tools.map(  
         (eachToolObject)=>{
           const divForToolCard = document.createElement("div")
@@ -44,17 +43,17 @@ function renderToolCards() {
 
 const selectDropDown = document.getElementById("selectToolMenu");
 function fillDropDown(){
-    //try tools.map with an if
-    const justAvailableNames = tools.filter(status => status.availability === "Available");
-    selectDropDown.innerHTML = "";
-    justAvailableNames.map(
-      (eachNameObject)=>{
+  selectDropDown.innerHTML = "";
+  tools.map(
+    (eachNameObject)=>{
+      if(eachNameObject.availability === "Available") {
         let option = document.createElement("option");
         option.text = eachNameObject.name;
         option.value = eachNameObject.name;
         selectDropDown.add(option);
       }
-    )
+    }
+  )  
 }
 
 const selectButton = document.getElementById("reserveToolButton");
