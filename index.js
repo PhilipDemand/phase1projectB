@@ -46,7 +46,7 @@ function fillDropDown(){
   tools.map(
     (eachNameObject)=>{
       if(eachNameObject.availability === "Available") {
-        let option = document.createElement("option");
+        const option = document.createElement("option");
         option.text = eachNameObject.name;
         option.value = eachNameObject.name;
         selectDropDown.add(option);
