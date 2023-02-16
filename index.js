@@ -4,8 +4,7 @@ function fetchTools() {
     fetch("http://localhost:3000/tools")
     .then(response => response.json())
     .then( (someData) => {
-      const arrayOfToolObjects = someData
-      tools.push(...arrayOfToolObjects)
+      tools.push(...someData)
       renderToolCards()
       fillDropDown()
     })
